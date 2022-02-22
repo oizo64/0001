@@ -1,0 +1,18 @@
+--liquibase formatted sql
+--changeset pkwiatkowski:2
+-- SET FOREIGN_KEY_CHECKS = 1;
+--
+-- INSERT INTO brand (name)VALUES ('SKODA');
+-- INSERT INTO brand (name)VALUES ('VW');
+-- INSERT INTO type (name)VALUES ('Combi');
+-- INSERT INTO type (name)VALUES ('Sedan');
+-- INSERT INTO class_room (name)VALUES ('Klasa 1a');
+-- INSERT INTO class_room (name)VALUES ('Klasa 2b');
+-- INSERT INTO activities (name)VALUES ('Prog');
+-- INSERT INTO activities (name)VALUES ('Garn');
+-- INSERT INTO user (name, password, class_id, activities_id)VALUES ('Piotr','Haslo', 1,1);
+-- INSERT INTO user (name, password, class_id, activities_id)VALUES ('Marcin','Haslo', 1,1);
+-- INSERT INTO address (user_id, name)VALUES (1, 'Bydgoszcz');
+-- INSERT INTO address (user_id, name)VALUES (2, 'Torun');
+-- INSERT INTO activitiesMembers (user, activities)VALUES (1,1);
+-- INSERT INTO activitiesMembers (user, activities)VALUES (2,2);
