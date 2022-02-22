@@ -61,14 +61,19 @@ public record UserService(UserRepo userRepo, AddressRepo addressRepo,
     }
 
     public User SingleUserByEntityGraph(Long id) {
-        EntityGraph<?> entityGraph = entityManager.getEntityGraph("user-name");
-        Map<String, Object> properties = new HashMap<>();
-        properties.put("javax.persistence.fetch-graph", entityGraph);
-        User user = entityManager.find(User.class, id, properties);
+//        EntityGraph<?> entityGraph = entityManager.getEntityGraph("user-name");
+//        entityGraph.addSubgraph("classroom-subgraph").addAttributeNodes("name");
+//        Map<String, Object> properties = new HashMap<>();
+//        properties.put("javax.persistence.fetch-graph", entityGraph);
+//        User user = entityManager.find(User.class, id, properties);
 
-        List<User> allUsersDisplayName = userRepo.findAll();
+        EntityGraph<?> graph = entityManager.getEntityGraph("graph.user.classroom");
 
-        return user;
+        Map<String, Object> hints = new HashMap<>();
+        hints.put("javax.persistence.fetch-graph", graph);
 
+        return entityManager.find(User.class, id, hints);
+
+//        return  userRepo.findBy(id);
     }
 }

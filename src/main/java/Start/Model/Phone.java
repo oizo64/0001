@@ -1,5 +1,6 @@
 package Start.Model;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.DynamicUpdate;
@@ -7,9 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Table
-@DynamicUpdate
-@Getter
-@Setter
+@Data
 public class Phone {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)

@@ -1,6 +1,7 @@
 package Start.Model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.DynamicUpdate;
@@ -11,9 +12,7 @@ import java.util.List;
 
 @Entity
 @Table
-@Getter
-@Setter
-@DynamicUpdate
+@Data
 public class Activity {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
