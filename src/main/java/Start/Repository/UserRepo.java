@@ -20,4 +20,5 @@ public interface UserRepo extends JpaRepository<User, Long> {
 //    @EntityGraph(value = "graph.user.classroom", type = EntityGraph.EntityGraphType.LOAD)
     @Query("SELECT u FROM User u WHERE u.id= ?1")
     User findBy(Long id);
+
 }
