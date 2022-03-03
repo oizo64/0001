@@ -1,14 +1,62 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
-    <title>Welcome</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}"/>
+    <meta charset="UTF-8">
+    <title>Create New Employee</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
-<h1>Welcome</h1>
-<div>
-    <a th:href="@{/registration_form}">Go to Employee Registration Form</a>
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <h2>Employee Registration</h2>
+            <form th:action="@{/save}" th:object="${userDto}" method="post">
+                <div class="form-row">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label for="name_label">Name</label>
+                        <input type="text" class="form-control" th:field="*{name}" id="name_label">
+                    </div>
+                <div class="col-md-6 form-group">
+                    <label for="password_label">Password</label>
+                    <input type="text" class="form-control" th:field="*{password}" id="password_label">
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <label for="phone_label">Phone</label>
+                    <input type="text" class="form-control" th:field="*{phoneDto.number}" id="phone_label">
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="address_label">Address</label>
+                    <input type="text" class="form-control" th:field="*{addressDto.street}" id="address_label">
+                    <label for="house_number_label">House Number</label>
+                    <input type="text" class="form-control" th:field="*{addressDto.houseNumberDto.number}" id="house_number_label">
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <label for="classRoom-label">Choose ClassRooms</label>
+                    <select class="form-control select picker" id="classRoom-label" multiple="multiple">
+                        <option th:each="classRoom, iterstat : ${classRoomListInput}"
+                                th:value="${classRoom.name}"
+                                th:filed="*{classRoomDtoList}"
+                                th:text="${classRoom.name}">
+                        </option>
+                    </select>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="activity-label">Choose Activity</label>
+                    <select class="form-control select picker" id="activity-label" multiple="multiple" th:filed="*{activityDtoList}">
+                        <option type="checkbox" th:each="activity : ${activityListInput}"
+                                th:value="${activity.getId()}"
+                                th:text="${activity.getName()}">
+                        </option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block mt-3">Save</button>
+            </form>
+        </div>
+    </div>
 </div>
 </body>
 </html>

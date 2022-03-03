@@ -1,5 +1,5 @@
 --liquibase formatted sql
---changeset pkwiatkowski:1
+--changeset user1:1
 create table user
 (
     id         BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -8,6 +8,7 @@ create table user
     phone_id   BIGINT,
     address_id BIGINT
 ) ENGINE = InnoDB;
+
 # --OneToOne unidirectional
 create table address
 (
@@ -20,8 +21,8 @@ ALTER TABLE user
         FOREIGN KEY (address_id) REFERENCES address (id);
 
 INSERT INTO address (street)
-VALUES ('Paderewskiego'),
-       ('Gdanska');
+VALUES ('xxxxx'),
+       ('yyyyyy');
 
 create table house_number
 (
@@ -58,8 +59,8 @@ VALUES ('+48555555555'),
        ('+48666666666');
 SET FOREIGN_KEY_CHECKS = 1;
 INSERT INTO user (name, password, phone_id,address_id)
-VALUES ('Piotr', 'haslo', 2 ,1),
-       ('Marcin', 'haslo', 1, 2);
+VALUES ('name1', 'passwd', 2 ,1),
+       ('name2', 'passwd', 1, 2);
 
 # --OneToMany
 create table class_room

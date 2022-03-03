@@ -1,9 +1,12 @@
 package Start.Controller;
 
 import Start.DTOs.UserDto;
+import Start.DTOs.UserDtoTest;
+import Start.Model.ClassRoom;
 import Start.Model.User;
 import Start.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,11 +30,13 @@ public class StartController {
 
     @GetMapping("/userbyentitygraph/{id}")
     public User getSingleUserByEntityGraph(@PathVariable Long id) {
-        return userService.SingleUserByEntityGraph(id);
+        return userService.singleUserByEntityGraph(id);
     }
 
     @PostMapping("/user")
     public void addUser(@RequestBody UserDto userDto){
         userService.addUserDto(userDto);
     }
+
+
 }

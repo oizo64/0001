@@ -6003,175 +6003,171 @@ projekt01|schema||CarShop|192.168.0.65|UPDATE|G</Grants>
       <DataType>varchar(20)|0s</DataType>
       <Position>2</Position>
     </column>
-    <index id="1245" parent="412" name="name">
-      <ColNames>name</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="1246" parent="412" name="PRIMARY">
+    <key id="1245" parent="412" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="1247" parent="413" name="id">
+    <column id="1246" parent="413" name="id">
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1248" parent="413" name="street">
+    <column id="1247" parent="413" name="street">
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="1249" parent="413" name="house_number_id">
+    <column id="1248" parent="413" name="house_number_id">
       <DataType>bigint(20)|0s</DataType>
       <Position>3</Position>
     </column>
-    <foreign-key id="1250" parent="413" name="fk_address_house_number_id">
+    <foreign-key id="1249" parent="413" name="fk_address_house_number_id">
       <ColNames>house_number_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>house_number</RefTableName>
     </foreign-key>
-    <index id="1251" parent="413" name="fk_address_house_number_id">
+    <index id="1250" parent="413" name="fk_address_house_number_id">
       <ColNames>house_number_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="1252" parent="413" name="PRIMARY">
+    <key id="1251" parent="413" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="1253" parent="414" name="id">
+    <column id="1252" parent="414" name="id">
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1254" parent="414" name="name">
+    <column id="1253" parent="414" name="name">
       <DataType>varchar(20)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="1255" parent="414" name="user_id">
+    <column id="1254" parent="414" name="user_id">
       <DataType>bigint(20)|0s</DataType>
       <Position>3</Position>
     </column>
-    <foreign-key id="1256" parent="414" name="fk_class_user_id">
+    <foreign-key id="1255" parent="414" name="fk_class_user_id">
       <ColNames>user_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>user</RefTableName>
     </foreign-key>
-    <index id="1257" parent="414" name="fk_class_user_id">
+    <index id="1256" parent="414" name="fk_class_user_id">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="1258" parent="414" name="PRIMARY">
+    <key id="1257" parent="414" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="1259" parent="415" name="id">
+    <column id="1258" parent="415" name="id">
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1260" parent="415" name="number">
+    <column id="1259" parent="415" name="number">
       <DataType>varchar(20)|0s</DataType>
       <Position>2</Position>
     </column>
-    <key id="1261" parent="415" name="PRIMARY">
+    <key id="1260" parent="415" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="1262" parent="416" name="id">
+    <column id="1261" parent="416" name="id">
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1263" parent="416" name="number">
+    <column id="1262" parent="416" name="number">
       <DataType>varchar(20)|0s</DataType>
       <Position>2</Position>
     </column>
-    <key id="1264" parent="416" name="PRIMARY">
+    <key id="1263" parent="416" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="1265" parent="417" name="id">
+    <column id="1264" parent="417" name="id">
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1266" parent="417" name="name">
+    <column id="1265" parent="417" name="name">
       <DataType>varchar(20)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="1267" parent="417" name="password">
+    <column id="1266" parent="417" name="password">
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="1268" parent="417" name="phone_id">
+    <column id="1267" parent="417" name="phone_id">
       <DataType>bigint(20)|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="1269" parent="417" name="address_id">
+    <column id="1268" parent="417" name="address_id">
       <DataType>bigint(20)|0s</DataType>
       <Position>5</Position>
     </column>
-    <foreign-key id="1270" parent="417" name="fk_user_phone_id">
+    <foreign-key id="1269" parent="417" name="fk_user_phone_id">
       <ColNames>phone_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>phone</RefTableName>
     </foreign-key>
-    <foreign-key id="1271" parent="417" name="fk_user_address_id">
+    <foreign-key id="1270" parent="417" name="fk_user_address_id">
       <ColNames>address_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>address</RefTableName>
     </foreign-key>
-    <index id="1272" parent="417" name="fk_user_phone_id">
+    <index id="1271" parent="417" name="fk_user_phone_id">
       <ColNames>phone_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="1273" parent="417" name="fk_user_address_id">
+    <index id="1272" parent="417" name="fk_user_address_id">
       <ColNames>address_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="1274" parent="417" name="PRIMARY">
+    <key id="1273" parent="417" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="1275" parent="418" name="user_id">
+    <column id="1274" parent="418" name="user_id">
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="1276" parent="418" name="activity_id">
+    <column id="1275" parent="418" name="activity_id">
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <foreign-key id="1277" parent="418" name="user_activity_ibfk_1">
+    <foreign-key id="1276" parent="418" name="user_activity_ibfk_1">
       <ColNames>user_id</ColNames>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>id</RefColNames>
       <RefTableName>user</RefTableName>
     </foreign-key>
-    <foreign-key id="1278" parent="418" name="user_activity_ibfk_2">
+    <foreign-key id="1277" parent="418" name="user_activity_ibfk_2">
       <ColNames>activity_id</ColNames>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>id</RefColNames>
       <RefTableName>activity</RefTableName>
     </foreign-key>
-    <index id="1279" parent="418" name="activity_id">
+    <index id="1278" parent="418" name="activity_id">
       <ColNames>activity_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="1280" parent="418" name="PRIMARY">
+    <key id="1279" parent="418" name="PRIMARY">
       <ColNames>user_id
 activity_id</ColNames>
       <NameSurrogate>1</NameSurrogate>

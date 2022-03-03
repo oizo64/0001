@@ -2,10 +2,8 @@ package Start.Mapper;
 
 import Start.DTOs.*;
 import Start.Model.*;
-import Start.Repository.ClassRoomRepo;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 @Service
@@ -13,7 +11,7 @@ public class ObjectMapper {
 
     public List<ClassRoomDto> convertListClassRoomToDto(List<ClassRoom> classRooms){
         return classRooms.stream()
-                .map(classRoom-> convertSingleClassRoomToDto(classRoom))
+                .map(this::convertSingleClassRoomToDto)
                 .collect(Collectors.toList());
     }
 
@@ -25,19 +23,19 @@ public class ObjectMapper {
 
     public List<ActivityDto> convertListActivityToDto(List<Activity> activities) {
         return activities.stream()
-                .map(activity -> convertSingleActivityToDto(activity))
+                .map(this::convertSingleActivityToDto)
                 .collect(Collectors.toList());
     }
 
-    public List<Activity> convertListActivityDtoToActivity(List<ActivityDto> activityDtos, User user) {
+    public List<Activity> convertListActivityDtoToActivity(List<ActivityDto> activityDtos, UserDto userDto) {
         return activityDtos.stream()
-                .map(activity -> convertSingleActivityDtoToActivity(activity, user))
+                .map(activity -> convertSingleActivityDtoToActivity(activity, userDto))
                 .collect(Collectors.toList());
     }
-    private Activity convertSingleActivityDtoToActivity(ActivityDto activityDto, User user) {
+    private Activity convertSingleActivityDtoToActivity(ActivityDto activityDto, UserDto userDto) {
         Activity activity = new Activity();
         activity.setName(activityDto.getName());
-        activity.setUsers(List.of(user));
+//        activity.setUsers(List.of(simpleUserConvertToUserDto(userDto)));
         return activity;
     }
 
@@ -59,8 +57,8 @@ public class ObjectMapper {
         PhoneDto phoneDto = new PhoneDto();
         phoneDto.setNumber(user.getPhone().getNumber());
         userDto.setPhoneDto(phoneDto);
-        userDto.setClassRoomDtos(convertListClassRoomToDto(user.getClassRoom()));
-        userDto.setActivityDtos(convertListActivityToDto(user.getActivity()));
+        userDto.setClassRoomDtoList(convertListClassRoomToDto(user.getClassRoom()));
+        userDto.setActivityDtoList(convertListActivityToDto(user.getActivity()));
         return userDto;
     }
 
@@ -75,22 +73,23 @@ public class ObjectMapper {
         phone.setNumber(phoneDto.getNumber());
         return phone;
     }
-    public List<ClassRoom> convertListClassRoomDtoToListClassRoom(List<ClassRoomDto> classRoomDtos, User user) {
+    public List<ClassRoom> convertListClassRoomDtoToListClassRoom(List<ClassRoomDto> classRoomDtos, UserDto userDto) {
         return classRoomDtos.stream()
-                .map(classRoomDto -> convertClassRoomDtoToClassRoom(classRoomDto, user))
+                .map(classRoomDto -> convertClassRoomDtoToClassRoom(classRoomDto, userDto))
                 .collect(Collectors.toList());
     }
 
-    private ClassRoom convertClassRoomDtoToClassRoom(ClassRoomDto classRoomDto, User user) {
+    private ClassRoom convertClassRoomDtoToClassRoom(ClassRoomDto classRoomDto, UserDto userDto) {
         ClassRoom classRoom = new ClassRoom();
         classRoom.setName(classRoomDto.getName());
-        classRoom.setUser(user);
+//        classRoom.setUser(simpleUserConvertToUserDto(userDto));
         return classRoom;
     }
 
     public HouseNumber convertHouseNumberDtoToHouseNumber(HouseNumberDto houseNumberDto) {
         HouseNumber houseNumber= new HouseNumber();
-        houseNumber.setNumber(houseNumberDto.getName());
+        houseNumber.setNumber(houseNumberDto.getNumber());
         return houseNumber;
     }
+
 }

@@ -1,5 +1,5 @@
 --liquibase formatted sql
---changeset pkwiatkowski:2
+--changeset user1:2
 -- SET FOREIGN_KEY_CHECKS = 1;
 --
 -- INSERT INTO brand (name)VALUES ('SKODA');

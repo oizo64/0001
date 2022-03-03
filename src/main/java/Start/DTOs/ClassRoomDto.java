@@ -1,9 +1,9 @@
 package Start.DTOs;
 
-import Start.Model.User;
-import lombok.Data;
+import lombok.*;
 
 @Data
 public class ClassRoomDto {
     private String name;
+
 }

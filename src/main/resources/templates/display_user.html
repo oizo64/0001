@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/css/display_form.css}" />
+</head>
+<body>
+<h2>Result</h2>
+<table>
+    <tbody>
+<!--    <tr>-->
+<!--        <td><strong>ID:</strong></td>-->
+<!--        <td><span th:text="${userDto.getId()}"></span></td>-->
+<!--    </tr>-->
+    <tr>
+        <td><strong>Name:</strong></td>
+        <td><span th:text="${userDto.getName()}"></span></td>
+    </tr>
+    <tr>
+        <td><strong>Age:</strong></td>
+        <td><span th:text="${userDto.getPassword()}"></span></td>
+    </tr>
+    <tr>
+        <td><strong>Phone:</strong></td>
+        <td><span th:text="${userDto.phoneDto.getNumber()}"></span></td>
+    </tr>
+    <tr>
+        <td><strong>Address:</strong></td>
+        <td><span th:text="${userDto.addressDto.getStreet()}"></span></td>
+    </tr>
+    <tr>
+        <td><strong>House Number:</strong></td>
+        <td><span th:text="${userDto.addressDto.houseNumberDto.getNumber()}"></span></td>
+    </tr>
+     <tr>
+        <td colspan="2">&nbsp;<a th:href="@{index}"
+                                 class="btn btn-success"> <i class="fa fa-arrow-circle-o-left"></i>&nbsp;Add
+            new user
+        </a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
